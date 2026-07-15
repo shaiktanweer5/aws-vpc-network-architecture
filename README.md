@@ -1,4 +1,9 @@
 # AWS VPC Network Architecture with EC2 Web Server
+![AWS](https://img.shields.io/badge/AWS-VPC-orange?logo=amazonaws)
+![EC2](https://img.shields.io/badge/Amazon-EC2-orange)
+![Linux](https://img.shields.io/badge/Linux-Amazon_Linux-green)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 ## 📌 Project Overview
 
