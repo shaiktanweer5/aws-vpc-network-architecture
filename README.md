@@ -135,7 +135,158 @@ Created a custom VPC with CIDR block:
 
 ### Step 2
 
-Created:
+Created the following subnets inside the VPC:
 
-- Public Subnet (10.0.1.0/24)
-- Private Subnet (10.0.2.
+- Public Subnet: **10.0.1.0/24**
+- Private Subnet: **10.0.2.0/24**
+
+The public subnet is used for resources that require internet access, while the private subnet is reserved for internal resources.
+
+---
+
+### Step 3
+
+Created an Internet Gateway (IGW) and attached it to the VPC to enable internet connectivity.
+
+---
+
+### Step 4
+
+Created a Public Route Table.
+
+Configured the route table to allow internet access through the Internet Gateway.
+
+---
+
+### Step 5
+
+Added the following route to the Public Route Table:
+
+```text
+Destination:
+0.0.0.0/0
+
+Target:
+Internet Gateway
+```
+
+This route allows outbound internet traffic from the public subnet.
+
+---
+
+### Step 6
+
+Associated the **Public Subnet** with the **Public Route Table**.
+
+This ensures that all resources launched in the public subnet can communicate with the Internet Gateway.
+
+---
+
+### Step 7
+
+Enabled **Auto Assign Public IPv4 Address** for the Public Subnet.
+
+This automatically assigns a public IP address to EC2 instances launched in the public subnet.
+
+---
+
+### Step 8
+
+Created a Security Group named:
+
+```
+Project-Web-SG
+```
+
+Configured the following inbound rules:
+
+| Type | Port | Source |
+|------|------|--------|
+| SSH | 22 | My IP |
+| HTTP | 80 | Anywhere (0.0.0.0/0) |
+
+Outbound Rule:
+
+- Allow All Traffic
+
+---
+
+### Step 9
+
+Launched an Amazon EC2 instance with the following configuration:
+
+| Setting | Value |
+|---------|-------|
+| AMI | Amazon Linux 2023 |
+| Instance Type | t2.micro |
+| Network | Project-VPC |
+| Subnet | Public Subnet |
+| Auto Assign Public IP | Enabled |
+| Security Group | Project-Web-SG |
+| Key Pair | Project-KeyPair |
+
+---
+
+### Step 10
+
+Connected to the EC2 instance using SSH.
+
+Updated the system packages:
+
+```bash
+sudo yum update -y
+```
+
+Installed Apache Web Server:
+
+```bash
+sudo yum install httpd -y
+```
+
+Enabled Apache to start automatically:
+
+```bash
+sudo systemctl enable httpd
+```
+
+Started the Apache service:
+
+```bash
+sudo systemctl start httpd
+```
+
+Verified that Apache was running:
+
+```bash
+sudo systemctl status httpd
+```
+
+---
+
+### Step 11
+
+Created a sample web page.
+
+```bash
+sudo nano /var/www/html/index.html
+```
+
+Added the following HTML:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS VPC Project</title>
+</head>
+<body>
+    <h1>🚀 AWS VPC Project</h1>
+    <p>Hosted on Amazon EC2</p>
+    <p>Created by Tanweer Ahmed</p>
+</body>
+</html>
+```
+
+Saved the file and accessed the EC2 Public IP from a web browser.
+
+The webpage loaded successfully, confirming that the VPC, Internet Gateway, Route Table, Security Group, EC2 instance, and Apache Web Server were configured correctly.
