@@ -290,3 +290,173 @@ Added the following HTML:
 Saved the file and accessed the EC2 Public IP from a web browser.
 
 The webpage loaded successfully, confirming that the VPC, Internet Gateway, Route Table, Security Group, EC2 instance, and Apache Web Server were configured correctly.
+
+---
+
+# 📷 Project Screenshots
+
+## 1. VPC Created
+
+Created a custom VPC with CIDR block **10.0.0.0/16**.
+
+![VPC Created](screenshots/01-vpc-created.png)
+
+---
+
+## 2. Public Subnet Created
+
+Created a public subnet (**10.0.1.0/24**) for internet-facing resources.
+
+![Public Subnet](screenshots/02-public-subnet-created.png)
+
+---
+
+## 3. Private Subnet Created
+
+Created a private subnet (**10.0.2.0/24**) for internal resources.
+
+![Private Subnet](screenshots/03-private-subnet-created.png)
+
+---
+
+## 4. Internet Gateway Created
+
+Created an Internet Gateway to provide internet connectivity.
+
+![Internet Gateway](screenshots/04-internet-gateway-created.png)
+
+---
+
+## 5. Internet Gateway Attached
+
+Attached the Internet Gateway to the custom VPC.
+
+![IGW Attached](screenshots/05-igw-attached.png)
+
+---
+
+## 6. Public Route Table Created
+
+Created a dedicated Public Route Table.
+
+![Public Route Table](screenshots/06-public-route-table-created.png)
+
+---
+
+## 7. Route Added
+
+Added a default route (0.0.0.0/0) pointing to the Internet Gateway.
+
+![Route Added](screenshots/07-route-added.png)
+
+---
+
+## 8. Public Subnet Associated
+
+Associated the Public Subnet with the Public Route Table.
+
+![Subnet Association](screenshots/08-public-subnet-associated.png)
+
+---
+
+## 9. Auto Public IP Enabled
+
+Enabled automatic assignment of Public IPv4 addresses.
+
+![Auto Public IP](screenshots/09-auto-public-ip-enabled.png)
+
+---
+
+## 10. Security Group Created
+
+Configured Security Group rules allowing SSH and HTTP traffic.
+
+![Security Group](screenshots/10-security-group-created.png)
+
+---
+
+## 11. Apache Web Server Running
+
+Successfully deployed the Apache web server and verified it using the EC2 Public IP.
+
+![Web Server](screenshots/11-webpage-running.png)
+
+---
+
+## 12. EC2 Instance Running
+
+Amazon EC2 instance running successfully in the Public Subnet.
+
+![EC2 Instance](screenshots/12-ec2-instance-running.png)
+
+---
+
+# 💡 Skills Demonstrated
+
+- Amazon VPC
+- CIDR Block Planning
+- Public & Private Subnets
+- Internet Gateway (IGW)
+- Route Tables
+- Security Groups
+- Amazon EC2
+- Linux Administration
+- Apache HTTP Server
+- AWS Networking Fundamentals
+
+---
+
+# 📖 Key Learnings
+
+- Designed a custom AWS VPC from scratch.
+- Planned CIDR ranges for VPC and subnets.
+- Understood the difference between Public and Private Subnets.
+- Configured Internet Gateway and Route Tables.
+- Secured resources using Security Groups.
+- Launched an EC2 instance in a Public Subnet.
+- Installed and configured Apache Web Server.
+- Verified web application accessibility over the Internet.
+
+---
+
+# 🧹 Cleanup
+
+To avoid unnecessary AWS charges, the following resources were deleted after completing the project:
+
+- EC2 Instance
+- Security Group
+- Route Tables
+- Internet Gateway
+- Public Subnet
+- Private Subnet
+- VPC
+
+- ---
+
+# 📂 Repository
+
+GitHub Repository:
+
+https://github.com/shaiktanweer5/aws-vpc-network-architecture
+
+---
+
+# 👨‍💻 Connect With Me
+
+### 🌐 Portfolio
+
+https://tanweerahmed.in
+
+### 💼 LinkedIn
+
+https://www.linkedin.com/in/shaik-tanweer-ahmed/
+
+### 🖥 GitHub
+
+https://github.com/shaiktanweer5
+
+---
+
+## ⭐ Support
+
+If you found this project useful, please consider giving this repository a ⭐ on GitHub.
